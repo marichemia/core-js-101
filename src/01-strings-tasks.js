@@ -279,23 +279,15 @@ function isString(value) {
  *   'K♠' => 51
  */
 function getCardId(value) {
-  const suits = ['♣', '♦', '♥', '♠'];
-  const values = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
-
-  let number = 0;
-
-  suits.forEach((i) => {
-    if (value[1] === i) {
-      number = 13 * suits.indexOf(i);
-    }
-  });
-  values.forEach((i) => {
-    if (value[0] === i) {
-      number += values.indexOf(i);
-    }
-  });
-
-  return number;
+  const arr1 = ['A♣', '2♣', '3♣', '4♣', '5♣', '6♣', '7♣', '8♣', '9♣', '10♣', 'J♣', 'Q♣', 'K♣',
+    'A♦', '2♦', '3♦', '4♦', '5♦', '6♦', '7♦', '8♦', '9♦', '10♦', 'J♦', 'Q♦', 'K♦',
+    'A♥', '2♥', '3♥', '4♥', '5♥', '6♥', '7♥', '8♥', '9♥', '10♥', 'J♥', 'Q♥', 'K♥', 'A♠', '2♠', '3♠', '4♠', '5♠', '6♠', '7♠', '8♠', '9♠', '10♠', 'J♠', 'Q♠', 'K♠'];
+  const arr2 = [];
+  for (let i = 0; i < 52; i += 1) {
+    arr2.push(i);
+  }
+  const num = arr1.indexOf(value);
+  return arr2[num];
 }
 
 
