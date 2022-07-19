@@ -278,8 +278,24 @@ function isString(value) {
  *   'Q♠' => 50
  *   'K♠' => 51
  */
-function getCardId(/* value */) {
-  throw new Error('Not implemented');
+function getCardId(value) {
+  const suits = ['♣', '♦', '♥', '♠'];
+  const values = ['A', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
+
+  let number = 0;
+
+  suits.forEach((i) => {
+    if (value[1] === i) {
+      number = 13 * suits.indexOf(i);
+    }
+  });
+  values.forEach((i) => {
+    if (value[0] === i) {
+      number += values.indexOf(i);
+    }
+  });
+
+  return number;
 }
 
 
