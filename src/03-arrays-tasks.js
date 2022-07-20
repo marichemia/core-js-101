@@ -179,7 +179,7 @@ function getHead(arr, n) {
  *    [ 'a', 'b', 'c', 'd'], 3  => [ 'b', 'c', 'd' ]
  */
 function getTail(arr, n) {
-  return arr.filter((x) => arr.indexOf(x) >= n);
+  return arr.filter((x) => arr.indexOf(x) >= arr.length - n);
 }
 
 
