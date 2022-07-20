@@ -70,7 +70,7 @@ function doubleArray(/* arr */) {
  *    [-1, 2, -5, -4, 0] => [ 2 ]
  *    [] => []
  */
-/*shecdoma*/
+/* shecdoma */
 function getArrayOfPositives(arr) {
   return arr.filter((x) => x > 0);
 }
@@ -87,7 +87,7 @@ function getArrayOfPositives(arr) {
  *    [ 'cat, 'dog', 'raccoon' ] => [ 'cat', 'dog', 'raccoon' ]
  */
 function getArrayOfStrings(arr) {
-  return arr.filter((x) => typeof x == 'string');
+  return arr.filter((x) => typeof x === 'string');
 }
 
 /**
