@@ -37,7 +37,8 @@ function findElement(arr, value) {
  */
 function generateOdds(len) {
   const arr = [];
-  for (let i = 1; i < len * 2; i += 2) {
+  const count = len * 2;
+  for (let i = 1; i < count; i += 2) {
     arr.push(i);
   }
   return arr;
