@@ -102,11 +102,11 @@ function timeSpanToString(startDate, endDate) {
  shecdoma */
 
 function angleBetweenClockHands(date) {
-  let hours = date.getHours();
+  let hours = date.getUTCHours();
   if (hours > 11) {
     hours -= 12;
   }
-  const minutes = date.getMinutes();
+  const minutes = date.getUTCMinutes();
   let hoursDegree = (30 * hours) + (0.5 * minutes);
   if (hoursDegree > 180) {
     hoursDegree = 360 - hoursDegree;
