@@ -350,7 +350,7 @@ function getDigitalRoot(num) {
   if (digitSum(num) > 9) {
     return digitSum(digitSum(num));
   }
-  return digitSum;
+  return digitSum(num);
 }
 
 
