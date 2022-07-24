@@ -374,7 +374,7 @@ function getDigitalRoot(num) {
  *   '{)' = false
  *   '{[(<{[]}>)]}' = true
  */
-function isBracketsBalanced(/* str */) {
+function isBracketsBalanced(str) {
   const brackets = '[]{}()<>';
   const stack = [];
   for (let i = 0; i < str.length; i += 1) {
