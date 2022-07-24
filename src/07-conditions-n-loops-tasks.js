@@ -344,13 +344,12 @@ function isCreditCardNumber(ccn) {
  *   165536 (1+6+5+5+3+6 = 26,  2+6 = 8) => 8
  */
 function getDigitalRoot(num) {
-  function digitSum(number) {
-    return number.toString().split('').reduce((total, n) => total + (+n), 0);
+  const sum = num.toString().split('').reduce((total, n) => total + (+n), 0);
+
+  if (sum < 10) {
+    return sum;
   }
-  if (digitSum(num) > 9) {
-    return digitSum(digitSum(num));
-  }
-  return digitSum(num);
+  return sum.toString().split('').reduce((total, n) => total + (+n), 0);
 }
 
 
