@@ -430,7 +430,7 @@ function getCommonDirectoryPath(/* pathes */) {
   throw new Error('Not implemented');
 }
 
-/* 
+/*
     let k= pathes[0].length;
     for (let i=0; i< pathes.length; i++){
       k = Math.min(k, pathes[i].length);
