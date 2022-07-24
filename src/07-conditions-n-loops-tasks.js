@@ -430,6 +430,20 @@ function getCommonDirectoryPath(/* pathes */) {
   throw new Error('Not implemented');
 }
 
+/* 
+    let k= pathes[0].length;
+    for (let i=0; i< pathes.length; i++){
+      k = Math.min(k, pathes[i].length);
+      for (let j=0; j<k; j++){
+        if (pathes[i][j] !== pathes[0][j]){
+          k = j;
+          break;
+        }
+      }
+    }
+    return pathes[0].substring(0, k);
+*/
+
 
 /**
  * Returns the product of two specified matrixes.
@@ -449,8 +463,20 @@ function getCommonDirectoryPath(/* pathes */) {
  *                         [ 6 ]]
  *
  */
-function getMatrixProduct(/* m1, m2 */) {
-  throw new Error('Not implemented');
+function getMatrixProduct(m1, m2) {
+  const m1NumRows = m1.length; const m1NumCols = m1[0].length;
+  const m2NumCols = m2[0].length;
+  const m = new Array(m1NumRows);
+  for (let r = 0; r < m1NumRows; r += 1) {
+    m[r] = new Array(m2NumCols);
+    for (let c = 0; c < m2NumCols; c += 1) {
+      m[r][c] = 0;
+      for (let i = 0; i < m1NumCols; i += 1) {
+        m[r][c] += m1[r][i] * m2[i][c];
+      }
+    }
+  }
+  return m;
 }
 
 
