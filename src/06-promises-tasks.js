@@ -58,15 +58,7 @@ function willYouMarryMe(isPositiveAnswer) {
  *
  */
 function processAllPromises(array) {
-  const res = [];
-  return new Promise((resolve) => {
-    array.forEach((e) => {
-      e.then((value) => {
-        res.push(value);
-      });
-    });
-    resolve(res);
-  });
+  return Promise.all(array);
 }
 
 /**
