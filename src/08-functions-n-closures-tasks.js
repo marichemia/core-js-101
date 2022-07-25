@@ -117,7 +117,7 @@ function retry(func, attempts) {
   try {
     func();
   } catch (error) {
-    if (attempts >= 1) {
+    if (attempts > 0) {
       retry(func, attempts - 1);
     }
   }
