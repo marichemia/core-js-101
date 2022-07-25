@@ -168,7 +168,7 @@ function logger(/* func, logFunc */) {
  *   partialUsingArguments(fn, 'a','b','c','d')() => 'abcd'
  */
 function partialUsingArguments(fn, ...args1) {
-  return (...args) => fn(...args1, ...args);
+  return (...lastArgs) => fn(...args1, ...lastArgs);
 }
 
 
