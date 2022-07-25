@@ -509,6 +509,7 @@ function getMatrixProduct(m1, m2) {
  *    [    ,   ,    ],       =>  undefined
  *    [    ,   ,    ]]
  *
+ * shecdoma
  */
 function evaluateTicTacToePosition(position) {
   const verticalLines = [[position[0][0], position[1][0],
