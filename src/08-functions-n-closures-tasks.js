@@ -190,7 +190,7 @@ function partialUsingArguments(fn, ...args1) {
  *   getId10() => 11
  */
 function getIdGeneratorFunction(startFrom) {
-  let num = startFrom;
+  let num = startFrom - 1;
   return () => {
     num += 1;
     return num;
