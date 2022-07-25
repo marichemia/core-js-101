@@ -511,17 +511,33 @@ function getMatrixProduct(m1, m2) {
  *
  */
 function evaluateTicTacToePosition(position) {
-  for (let i = 0; i < 2; i += 1) {
-    if (position[i][0] === position[i][1] && position[i][0] === position[i][2]) {
-      return position[i][0];
-    } if (position[i][0] === position[i + 1][1] && position[i][0] === position[i + 2][2]) {
-      return position[i][0];
-    } if (position[i][2] === position[i + 1][1] && position[i][2] === position[i + 2][0]) {
-      return position[i][2];
-    } if (position[i][i] === position[i + 1][i] && position[i][i] === position[i + 2][i]) {
-      return position[i][i];
+  const verticalLines = [[position[0][0], position[1][0],
+    position[2][0]],
+  [position[0][1], position[1][1], position[2][1]],
+  [position[0][2], position[1][2], position[2][2]]];
+  const diagonalLines = [[position[0][0], position[1][1], position[2][2]],
+    [position[0][2], position[1][1], position[2][0]]];
+
+
+  function isWin(line) {
+    if (line[0] === line[1] && line[0] === line[2] && line[0] !== undefined) {
+      return line[0];
     }
+    return false;
   }
+
+
+  for (let i = 0; i < position.length; i += 1) {
+    if (isWin(position[i])) {
+      return isWin(position[i]);
+    } if (isWin(verticalLines[i])) {
+      return isWin(verticalLines[i]);
+    } if (isWin(diagonalLines[i])) {
+      return isWin(diagonalLines[i]);
+    }
+    return undefined;
+  }
+
   return undefined;
 }
 
